@@ -1,0 +1,18 @@
+name: Test workflow
+
+on:
+  push:   # run every time you push to any branch
+
+jobs:
+  testJob:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Say hi
+        run: echo "Hi! I'm running because of a push event."
+
+      - name: List files
+        run: ls ${{ github.workspace }}
